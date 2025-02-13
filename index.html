@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🤫</title>
-    <!-- Link do czcionki Dancing Script z wyższą grubością -->
+
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -13,7 +13,7 @@
             align-items: center;
             height: 100vh;
             background-color: pink;
-            font-family: 'Dancing Script', cursive;  /* Zmieniona czcionka */
+            font-family: 'Dancing Script', cursive;  
             text-align: center;
             overflow: hidden;
         }
@@ -28,28 +28,28 @@
             color: white;
             border: none;
             padding: 15px 30px;
-            font-size: 25px;  /* Zwiększenie rozmiaru czcionki w przyciskach */
+            font-size: 25px;  
             cursor: pointer;
             border-radius: 10px;
             margin: 10px;
-            font-family: 'Dancing Script', cursive;  /* Czcionka dla przycisków */
-            font-weight: 700;  /* Grubsza czcionka */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Cień tekstu dla przycisków */
+            font-family: 'Dancing Script', cursive; 
+            font-weight: 700;  
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
         }
         h1 {
-            font-size: 50px;  /* Zwiększenie rozmiaru czcionki nagłówka */
-            font-weight: 700;  /* Grubsza czcionka */
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);  /* Cień tekstu dla nagłówka */
+            font-size: 50px; 
+            font-weight: 700;  
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); 
         }
 
-        /* Zmieniony wygląd serca z emoji */
+
         .heart {
             position: absolute;
-            font-size: 40px;  /* Powiększone emoji serca */
+            font-size: 40px; 
             animation: float 4s infinite ease-in-out;
         }
 
-        /* Animacja unoszenia serca */
+ 
         @keyframes float {
             0% {
                 transform: translateY(0);
@@ -77,18 +77,18 @@
             document.getElementById('question').style.display = 'block';
         }
 
-        // Funkcja tworząca serca z emoji
+ 
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('heart');
-            heart.style.left = Math.random() * 100 + 'vw';  // Losowa pozycja pozioma
-            heart.innerText = '💓';  // Używamy emoji serca
-            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';  // Losowy czas animacji
+            heart.style.left = Math.random() * 100 + 'vw';  
+            heart.innerText = '💓';  
+            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';  
             document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 4000);  // Usuwanie serca po zakończeniu animacji
+            setTimeout(() => heart.remove(), 4000); 
         }
 
-        setInterval(createHeart, 300);  // Tworzenie serca co 300ms
+        setInterval(createHeart, 300);  
     </script>
 </body>
 </html>
