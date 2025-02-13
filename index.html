@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walentynki</title>
+    <title>Walentynka</title>
     <style>
         body {
             display: flex;
@@ -31,14 +31,17 @@
             border-radius: 10px;
             margin: 10px;
         }
+        /* Zmieniony wygląd serca */
         .heart {
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 60px;  /* Zwiększenie rozmiaru serca */
+            height: 60px; /* Zwiększenie rozmiaru serca */
             background-color: red;
-            clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 50% 75%, 25% 100%, 0% 35%);
+            clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 50% 75%, 25% 100%, 0% 35%);  /* Kształt serca */
             animation: float 4s infinite ease-in-out;
         }
+
+        /* Animacja unoszenia serca */
         @keyframes float {
             0% {
                 transform: translateY(0);
@@ -66,16 +69,17 @@
             document.getElementById('question').style.display = 'block';
         }
 
+        // Funkcja tworząca serca
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('heart');
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            heart.style.left = Math.random() * 100 + 'vw';  // Losowa pozycja pozioma
+            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';  // Losowy czas animacji
             document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 4000);
+            setTimeout(() => heart.remove(), 4000);  // Usuwanie serca po zakończeniu animacji
         }
 
-        setInterval(createHeart, 300);
+        setInterval(createHeart, 300);  // Tworzenie serca co 300ms
     </script>
 </body>
-</html> 
+</html>
