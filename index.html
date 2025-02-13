@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walentynka</title>
+    <title>🤫</title>
+    <!-- Link do czcionki Dancing Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -11,7 +13,7 @@
             align-items: center;
             height: 100vh;
             background-color: pink;
-            font-family: Arial, sans-serif;
+            font-family: 'Dancing Script', cursive;  /* Zmieniona czcionka na bardziej romantyczną */
             text-align: center;
             overflow: hidden;
         }
@@ -30,14 +32,13 @@
             cursor: pointer;
             border-radius: 10px;
             margin: 10px;
+            font-family: 'Dancing Script', cursive;  /* Czcionka dla przycisków */
         }
-        /* Zmieniony wygląd serca */
+
+        /* Zmieniony wygląd serca z emoji */
         .heart {
             position: absolute;
-            width: 60px;  /* Zwiększenie rozmiaru serca */
-            height: 60px; /* Zwiększenie rozmiaru serca */
-            background-color: red;
-            clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 50% 75%, 25% 100%, 0% 35%);  /* Kształt serca */
+            font-size: 40px;  /* Powiększone emoji serca */
             animation: float 4s infinite ease-in-out;
         }
 
@@ -69,17 +70,18 @@
             document.getElementById('question').style.display = 'block';
         }
 
-        // Funkcja tworząca serca
+        // Funkcja tworząca serca z emoji
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('heart');
             heart.style.left = Math.random() * 100 + 'vw';  // Losowa pozycja pozioma
+            heart.innerText = '💓';  // Używamy emoji serca
             heart.style.animationDuration = (Math.random() * 2 + 3) + 's';  // Losowy czas animacji
             document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 4000);  // Usuwanie serca po zakończeniu animacji
+            setTimeout(() => heart.remove(), 4000); 
         }
 
-        setInterval(createHeart, 300);  // Tworzenie serca co 300ms
+        setInterval(createHeart, 300); 
     </script>
 </body>
 </html>
