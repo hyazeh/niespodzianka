@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walentynki</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            display: none;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 50% 75%, 25% 100%, 0% 35%);
+            animation: float 4s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="start">
+        <button onclick="showQuestion()">Kliknij tutaj</button>
+    </div>
+    <div id="question" class="container">
+        <h1>Czy zostaniesz moją walentynką? ❤️</h1>
+        <button onclick="alert('Jupi! ❤️')">Tak</button>
+        <button onclick="alert('Jupi! ❤️')">Tak</button>
+    </div>
+    <script>
+        function showQuestion() {
+            document.getElementById('start').style.display = 'none';
+            document.getElementById('question').style.display = 'block';
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html> 
